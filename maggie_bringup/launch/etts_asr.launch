@@ -1,0 +1,13 @@
+<launch>
+    <arg name="robot" />
+
+    <!-- ASR -->
+    <include file="$(find asr)/launch/asr_skill.launch">
+        <arg name="robot" value="$(arg robot)" />
+    </include>
+
+    <!-- ETTS -->
+    <include file="$(find etts)/launch/etts_skill.launch">
+        <arg name="robot" value="$(arg robot)" />
+    </include>
+</launch>
