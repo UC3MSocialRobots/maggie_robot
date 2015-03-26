@@ -12,4 +12,9 @@
     <include file="$(find basic_states_skill)/launch/basic_states_skill.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
+
+    <!-- TOUCH -->
+    <include file="$(find touch_skill)/launch/touch_skill.launch">
+        <arg name="robot" value="$(arg robot)" />
+    </include>
 </launch>
