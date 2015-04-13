@@ -3,7 +3,7 @@
 
     <!-- DEVICES - -->
     <!-- LABJACK -->
-    <include file="$(find labjack)/launch/labjack.launch">
+    <include file="$(find maggie_labjack)/launch/labjack.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
 

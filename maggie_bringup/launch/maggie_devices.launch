@@ -2,30 +2,30 @@
     <arg name="robot" value="maggie" />
 
     <!-- LABJACK -->
-    <include file="$(find labjack)/launch/labjack.launch">
+    <include file="$(find maggie_labjack)/launch/labjack.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
 
     <!-- MOTOR CONTROLLER (NECK - ARMS) -->
-    <include file="$(find motor_controller)/launch/neck_controller.launch">
+    <include file="$(find maggie_motor_controller)/launch/neck_controller.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
-    <include file="$(find motor_controller)/launch/arms_controller.launch">
+    <include file="$(find maggie_motor_controller)/launch/arms_controller.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
 
     <!-- EYELIDS -->
-    <include file="$(find eyelids)/launch/eyelids.launch">
+    <include file="$(find maggie_eyelids)/launch/eyelids.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
 
     <!-- IR CONTROLLER -->
-    <include file="$(find ir_controller)/launch/ir_controller.launch">
+    <include file="$(find maggie_ir_controller)/launch/ir_controller.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
 
     <!-- RFID -->
-    <include file="$(find rfid)/launch/rfid_head.launch">
+    <include file="$(find maggie_rfid)/launch/rfid_head.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
 </launch>
