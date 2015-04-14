@@ -16,6 +16,6 @@
 
     <group ns="$(arg robot)">
         <!-- teleoperation with joystick -->
-        <!-- <include file="$(find nav)/launch/teleop_joy.launch" /> -->
+        <!-- <include file="$(find navigation)/launch/teleop_joy.launch" /> -->
     </group>
 </launch>
