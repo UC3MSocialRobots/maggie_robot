@@ -29,3 +29,28 @@
 
 # Autosaved files
 *~
+
+# IDEs
+CMakeLists.txt.user
+.project
+.cproject
+.settings
+.pydevproject
+
+# ROS
+bin
+build
+lib
+msg_gen
+srv_gen
+Makefile
+CMakeCache.txt
+cmake
+cmake_install.cmake
+gtest
+catkin_generated
+devel
+test_results
+CTestTestfile.cmake
+CMakeFiles
+catkin
