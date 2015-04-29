@@ -2,7 +2,7 @@
     <arg name="robot" value="maggie" />
 
     <!-- Run the map server -->
-    <node name="map_server" pkg="map_server" type="map_server" args="$(find nav)/config/map_1.3.C12_2014-12.yaml">
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find maggie_navigation_config)/config/map_1.3.C12_2014-12.yaml">
         <param name="frame_id" value="/map" />
     </node>
 
@@ -10,12 +10,12 @@
     <param name="/use_sim_time" value="false" />
 
     <!-- navigation (real) -->
-    <include file="$(find nav)/launch/real/navigation_real.launch">
+    <include file="$(find maggie_navigation_config)/launch/real/navigation_real.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
 
     <group ns="$(arg robot)">
         <!-- teleoperation with joystick -->
-        <!-- <include file="$(find nav)/launch/teleop_joy.launch" /> -->
+        <!-- <include file="$(find maggie_teleop)/launch/teleop_joy.launch" /> -->
     </group>
 </launch>
