@@ -1,0 +1,25 @@
+# labjack
+ATTRS{idProduct}=="0001", ATTRS{idVendor}=="0cd5", GROUP="labjack", MODE="0660", NAME="usb/labjack0", RUN+="/sbin/modprobe labjack"
+# Port 1 del hub RS232
+KERNEL=="ttyUSB*", KERNELS=="*1:1.0", DRIVERS=="ftdi_sio", SYMLINK="horizontal_neck"
+# Port 2 del hub RS232
+KERNEL=="ttyUSB*", KERNELS=="*1:1.1", DRIVERS=="ftdi_sio", SYMLINK="right_arm"
+# Port 3 del hub RS232
+KERNEL=="ttyUSB*", KERNELS=="*2:1.0", DRIVERS=="ftdi_sio", SYMLINK="eyelids"
+# Port 4 del hub RS232
+KERNEL=="ttyUSB*", KERNELS=="*2:1.1", DRIVERS=="ftdi_sio", SYMLINK="motor_base1"
+# Port 5 del hub RS232
+KERNEL=="ttyUSB*", KERNELS=="*3:1.0", DRIVERS=="ftdi_sio", SYMLINK="vertical_neck"
+# Port 6 del hub RS232
+KERNEL=="ttyUSB*", KERNELS=="*3:1.1", DRIVERS=="ftdi_sio", SYMLINK="left_arm"
+# Port 7 del hub RS232
+KERNEL=="ttyUSB*", KERNELS=="*4:1.0", DRIVERS=="ftdi_sio", SYMLINK="laser"
+# Port 8 del hub RS232
+KERNEL=="ttyUSB*", KERNELS=="*4:1.1", DRIVERS=="ftdi_sio", SYMLINK="motor_base2"
+# Ir controller
+KERNEL=="ttyUSB*", ATTRS{idProduct}=="fc60", ATTRS{idVendor}=="0403", SYMLINK="ttyUSBir"
+# Joypad
+KERNEL=="js*", SUBSYSTEM=="input", ATTRS{serial}=="0000:00:1a.0", SYMLINK="js0", MODE="0666"
+
+# Alsa
+SUBSYSTEM=="sound", GROUP="audio", MODE="0660"
