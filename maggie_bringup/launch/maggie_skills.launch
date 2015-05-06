@@ -3,15 +3,6 @@
 <launch>
     <arg name="robot" value="maggie" />
 
-    <!-- ETTS + ASR -->
-    <param name="/$(arg robot)/etts_language" value="en" />
-    <param name="/$(arg robot)/etts_emotion" value="happy" />
-    <param name="/$(arg robot)/etts_primitive" value="google" />
-
-    <include file="$(find maggie_bringup)/launch/etts_asr.launch">
-        <arg name="robot" value="$(arg robot)" />
-    </include>
-
     <!-- BATTERIES -->
     <include file="$(find batteries_skill)/launch/batteries_skill.launch">
         <arg name="robot" value="$(arg robot)" />

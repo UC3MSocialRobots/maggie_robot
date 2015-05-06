@@ -9,6 +9,9 @@
     <!-- SKILLS - -->
     <include file="$(find maggie_bringup)/launch/maggie_skills.launch" />
 
+    <!-- DIALOG - -->
+    <include file="$(find maggie_bringup)/launch/maggie_dialog.launch" />
+
     <!-- MOVEMENT -->
     <include file="$(find maggie_bringup)/launch/maggie_navigation.launch" />
 </launch>
