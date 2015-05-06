@@ -5,4 +5,4 @@
 echo "Copying udev rules..."
 
 cd `rospack find maggie_bringup`/config/
-cp 99-maggie.rules /etc/udev/rules.d/
+sudo cp 99-maggie.rules /etc/udev/rules.d/
