@@ -20,6 +20,8 @@ KERNEL=="ttyUSB*", KERNELS=="*4:1.1", DRIVERS=="ftdi_sio", SYMLINK="motor_base2"
 KERNEL=="ttyUSB*", ATTRS{idProduct}=="fc60", ATTRS{idVendor}=="0403", SYMLINK="ttyUSBir"
 # Joypad
 KERNEL=="js*", SUBSYSTEM=="input", ATTRS{serial}=="0000:00:1a.0", SYMLINK="js0", MODE="0666"
+# Hokuyo
+SUBSYSTEMS=="usb", KERNEL=="ttyACM[0-9]*", ATTRS{manufacturer}=="Hokuyo Data Flex for USB", ATTRS{product}=="URG-Series USB Driver", PROGRAM=="/etc/ros/run.sh hokuyo_node getID %N q", SYMLINK+="sensors/hokuyo_%c"
 
 # Alsa
 SUBSYSTEM=="sound", GROUP="audio", MODE="0660"
