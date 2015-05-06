@@ -15,9 +15,4 @@
     <include file="$(find maggie_navigation_config)/launch/real/navigation_real.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
-
-    <group ns="$(arg robot)">
-        <!-- teleoperation with joystick -->
-        <!-- <include file="$(find maggie_teleop)/launch/teleop_joy.launch" /> -->
-    </group>
 </launch>
