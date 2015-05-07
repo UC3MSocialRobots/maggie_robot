@@ -1,5 +1,3 @@
-# labjack
-ATTRS{idProduct}=="0001", ATTRS{idVendor}=="0cd5", GROUP="labjack", MODE="0666", NAME="usb/labjack0", RUN+="/sbin/modprobe labjack"
 # Port 1 del hub RS232
 KERNEL=="ttyUSB*", KERNELS=="*1:1.0", DRIVERS=="ftdi_sio", SYMLINK="horizontal_neck"
 # Port 2 del hub RS232
