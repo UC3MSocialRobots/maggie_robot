@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# add 'user' to the groups 'dialout', and 'video'
+
+sudo usermod -a -G dialout, video $USER
+
 # copy udev rules
 
 echo "Copying udev rules..."
