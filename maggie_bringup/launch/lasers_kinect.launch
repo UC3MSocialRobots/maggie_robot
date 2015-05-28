@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <launch>
-    <arg name="robot" value="maggie" />
+    <arg name="robot" />
 
     <!-- SICK -->
     <include file="$(find maggie_navigation_config)/launch/laser/sick.launch">
