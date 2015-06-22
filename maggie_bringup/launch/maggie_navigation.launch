@@ -15,4 +15,9 @@
     <include file="$(find maggie_navigation_config)/launch/real/navigation_real.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
+
+    <!-- manual initialpose -->
+    <include file="$(find maggie_navigation_config)/launch/initialpose.launch">
+        <arg name="robot" value="$(arg robot)" />
+    </include>
 </launch>
