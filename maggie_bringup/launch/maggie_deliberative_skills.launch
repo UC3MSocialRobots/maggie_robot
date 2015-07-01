@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+    <arg name="robot" value="maggie" />
+
+    <!-- GOTO PLACE -->
+    <include file="$(find goto_place_skill)/launch/goto_place_skill.launch">
+        <arg name="robot" value="$(arg robot)" />
+    </include>
+
+    <!--FOLLOWME_SKILL -->
+    <include file="$(find followme_skill)/launch/followme_skill.launch">
+        <arg name="robot" value="$(arg robot)" />
+        <arg name="usePPL" value="true" />
+    </include>
+    
+    <!-- PEOPLE DETECTION AND RECOGNITION BY VISION -->
+    <include file="$(find people_recognition_vision)/launch/user_awareness_sample.launch">
+    </include>
+
+</launch>
