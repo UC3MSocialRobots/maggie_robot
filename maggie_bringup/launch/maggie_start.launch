@@ -6,12 +6,15 @@
     <!-- DEVICES - -->
     <include file="$(find maggie_bringup)/launch/maggie_devices.launch" />
 
-    <!-- SKILLS - -->
-    <include file="$(find maggie_bringup)/launch/maggie_skills.launch" />
+    <!-- REACTIVE SKILLS - -->
+    <include file="$(find maggie_bringup)/launch/maggie_reactive_skills.launch" />
 
-    <!-- DIALOG - -->
-    <include file="$(find maggie_bringup)/launch/maggie_dialog.launch" />
+    <!-- DELIBERATIVE  SKILLS - -->
+    <include file="$(find maggie_bringup)/launch/maggie_deliberative_skills.launch" />
 
-    <!-- MOVEMENT -->
+    <!-- INTERACTION SYSTEM: DIALOG MANAGER, MULTIMODAL FUSION, MULTIMODAL FISION, ASR, ETTS, ETC- -->
+    <include file="$(find maggie_bringup)/launch/maggie_interaction_system.launch" />
+
+    <!-- NAVIGATION USING MAP -->
     <include file="$(find maggie_bringup)/launch/maggie_navigation.launch" />
 </launch>
