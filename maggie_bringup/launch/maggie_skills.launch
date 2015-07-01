@@ -12,12 +12,7 @@
     <include file="$(find touch_skill)/launch/touch_skill.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
-
-    <!-- STATES -->
-    <include file="$(find basic_states_skill)/launch/basic_states_skill.launch">
-        <arg name="robot" value="$(arg robot)" />
-    </include>
-
+    
     <!-- BLINK -->
     <include file="$(find blink_skill)/launch/blink_skill.launch">
         <arg name="robot" value="$(arg robot)" />
@@ -27,4 +22,18 @@
     <include file="$(find goto_place_skill)/launch/goto_place_skill.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
+
+    <!-- FOLLOWME_SKILL -->
+    <include file="$(find followme_skill)/launch/followme_skill.launch">
+        <arg name="robot" value="$(arg robot)" />
+        <arg name="usePPL" value="false" />
+    </include>
+
+
+    <!-- STATES -->
+    <include file="$(find basic_states_skill)/launch/basic_states_skill.launch">
+        <arg name="robot" value="$(arg robot)" />
+    </include>
+
+
 </launch>
