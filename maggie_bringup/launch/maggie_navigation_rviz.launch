@@ -5,6 +5,6 @@
 
     <group ns="$(arg robot)">
         <!-- RVIZ -->
-        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find uc3m_maps)/config/map_1.3.C12_real.rviz" />
+        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find uc3m_maps)/config/navigation.rviz" />
     </group>
 </launch>

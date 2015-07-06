@@ -2,9 +2,10 @@
 
 <launch>
     <arg name="robot" value="maggie" />
+    <arg name="map_name" default="roboticslab_complete_clean" />
 
     <!-- Run the map server -->
-    <node name="map_server" pkg="map_server" type="map_server" args="$(find uc3m_maps)/maps/map_1.3.C12_2014-12.yaml">
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find uc3m_maps)/maps/$(arg map_name).yaml">
         <param name="frame_id" value="/map" />
     </node>
 
@@ -16,7 +17,7 @@
         <arg name="robot" value="$(arg robot)" />
     </include>
 
-    <!-- manual initialpose -->
+    <!-- force initialpose -->
     <include file="$(find maggie_navigation_config)/launch/initialpose.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
