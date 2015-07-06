@@ -22,5 +22,20 @@
     <include file="$(find basic_states_skill)/launch/basic_states_skill.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
+    
+    <!-- GOTO PLACE -->
+    <include file="$(find goto_place_skill)/launch/goto_place_skill.launch">
+        <arg name="robot" value="$(arg robot)" />
+    </include>
+
+    <!-- FOLLOWME -->
+    <include file="$(find followme_skill)/launch/followme_skill.launch">
+        <arg name="robot" value="$(arg robot)" />
+        <arg name="usePPL" value="true" />
+    </include>
+    
+    <!-- PEOPLE DETECTION & RECOGNITION (BY VISION) -->
+    <include file="$(find people_recognition_vision)/launch/user_awareness_sample.launch">
+    </include>
 
 </launch>
