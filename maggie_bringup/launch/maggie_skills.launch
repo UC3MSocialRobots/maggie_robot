@@ -45,7 +45,7 @@
 	  <arg name="pplp_use_face_detector3d"     value="true"/>
 	  <arg name="pplp_use_hog_detector"        value="true"/>
 	  <arg name="pplm_use_euclidean"           value="true"/>
-	  <arg name="pplm_use_face_rec"            value="false"/>
+	  <arg name="pplm_use_face_rec"            value="true"/>
 	  <arg name="data_fusion_use_ukf"          value="true"/>
 
 	  <arg name="data_fusion_static_frame_id"  value="base_link"/>
