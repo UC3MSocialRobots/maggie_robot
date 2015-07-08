@@ -35,7 +35,20 @@
     </include>
     
     <!-- PEOPLE DETECTION & RECOGNITION (BY VISION) -->
+<!--
     <include file="$(find people_recognition_vision)/launch/user_awareness_sample.launch">
     </include>
+-->
+	<!-- launch the user detection, recognition, and fusion -->
+	<include file="$(find people_recognition_vision)/launch/ukf_multimodal_lite.launch">
+	  <arg name="robot" value="$(arg robot)" />
+	  <arg name="pplp_use_face_detector3d"     value="true"/>
+	  <arg name="pplp_use_hog_detector"        value="true"/>
+	  <arg name="pplm_use_euclidean"           value="true"/>
+	  <arg name="pplm_use_face_rec"            value="false"/>
+	  <arg name="data_fusion_use_ukf"          value="true"/>
+
+	  <arg name="data_fusion_static_frame_id"  value="base_link"/>
+	</include>
 
 </launch>
