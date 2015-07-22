@@ -25,4 +25,4 @@ KERNEL=="ttyACM[0-9]*", ACTION=="add", ATTRS{idVendor}=="15d1", MODE="0666", GRO
 KERNEL=="eth*", SYSFS{address}=="00:16:36:9A:78:6D", NAME="eth0"
 
 # Alsa
-SUBSYSTEM=="sound", GROUP="audio", MODE="0660"
+#SUBSYSTEM=="sound", GROUP="audio", MODE="0660"
