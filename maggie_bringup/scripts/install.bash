@@ -29,6 +29,9 @@ echo "Replacing alsa and pulse config files to set the Logitech USB card as defa
 sudo cp ../config/default.pa /etc/pulse/default.pa
 sudo cp ../config/alsa-base.conf /etc/modprobe.d/alsa-base.conf
 
+echo "Replacing MAC addres to works the Loquendo licence"
+sudo apt-get install macchanger 
+sudo cp ../config/interfaces /etc/network/interfaces
 
 ## (optional) Config IR permissions
 

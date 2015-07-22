@@ -1,0 +1,4 @@
+auto lo
+iface lo inet loopback
+pre-up macchanger -m 00:16:36:9A:78:6D eth0
+
