@@ -2,7 +2,7 @@
 
 <launch>
     <arg name="robot" value="maggie" />
-    <arg name="map_name" default="roboticslab_complete_clean" />
+    <arg name="map_name" default="map_1.3.C12_2014-12" />
 
     <!-- Run the map server -->
     <node name="map_server" pkg="map_server" type="map_server" args="$(find uc3m_maps)/maps/$(arg map_name).yaml">

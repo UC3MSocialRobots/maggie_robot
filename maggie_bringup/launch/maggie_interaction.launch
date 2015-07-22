@@ -17,6 +17,7 @@
 
     <include file="$(find dialog_manager)/launch/robotics_dialog_system.launch">
         <arg name="robot" value="$(arg robot)" />
+	<arg name="debug" value="ERROR" />
     </include>
 
 </launch>
