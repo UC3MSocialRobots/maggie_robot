@@ -21,7 +21,14 @@ sudo service udev restart
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 
+
 echo "FINISH!"
+
+
+echo "Replacing alsa and pulse config files to set the Logitech USB card as default audio device"
+sudo cp ../config/default.pa /etc/pulse/default.pa
+sudo cp ../config/alsa-base.conf /etc/modprobe.d/alsa-base.conf
+
 
 ## (optional) Config IR permissions
 
