@@ -50,5 +50,4 @@
 
 	  <arg name="data_fusion_static_frame_id"  value="base_link"/>
 	</include>
-
 </launch>
