@@ -3,11 +3,11 @@
 <launch>
     <arg name="robot" value="maggie" />
 
-    <!-- DEVICES - -->
-    <include file="$(find maggie_bringup)/launch/maggie_devices.launch" />
-
     <!-- TF CONFIG -->
     <include file="$(find maggie_bringup)/launch/maggie_config.launch" />
+    
+    <!-- DEVICES - -->
+    <include file="$(find maggie_bringup)/launch/maggie_devices.launch" />    
 
     <!-- SKILLS - -->
     <include file="$(find maggie_bringup)/launch/maggie_skills.launch" />

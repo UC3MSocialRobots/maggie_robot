@@ -2,6 +2,9 @@
 
 <launch>
     <arg name="robot" value="maggie" />
+    
+    <!-- TF CONFIG -->
+    <include file="$(find maggie_bringup)/launch/maggie_config.launch" />
 
     <!-- DEVICES - -->
     
