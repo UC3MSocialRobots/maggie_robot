@@ -3,27 +3,17 @@
 <launch>
     <arg name="robot" value="maggie" />
     
-    <!-- TF CONFIG -->
-    <include file="$(find maggie_bringup)/launch/maggie_config.launch" />    
+    <!-- START BASIC -->
+    <include file="$(find maggie_bringup)/launch/maggie_start_basic.launch" />    
 
     <!-- DEVICES - -->
 
-    <!-- LABJACK -->
-    <include file="$(find maggie_labjack)/launch/labjack.launch">
+    <!-- LASERS + KINECT -->
+    <include file="$(find maggie_bringup)/launch/lasers_kinect.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
 
     <!-- SKILLS - -->
-
-    <!-- STATES -->
-    <include file="$(find basic_states_skill)/launch/basic_states_skill.launch">
-        <arg name="robot" value="$(arg robot)" />
-    </include>
-
-    <!-- TOUCH -->
-    <include file="$(find touch_skill)/launch/touch_skill.launch">
-        <arg name="robot" value="$(arg robot)" />
-    </include>
 
     <!-- GOTO PLACE -->
     <include file="$(find goto_place_skill)/launch/goto_place_skill.launch">
