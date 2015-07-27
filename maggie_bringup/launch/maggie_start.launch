@@ -12,7 +12,7 @@
     <!-- SKILLS - -->
     <include file="$(find maggie_bringup)/launch/maggie_skills.launch" />
 
-    <!-- INTERACTION SKILLS: DIALOG MANAGER, MULTIMODAL FUSION, MULTIMODAL FISION, ASR, ETTS, ETC- -->
+    <!-- INTERACTION SKILLS: DIALOG MANAGER, MULTIMODAL FUSION, MULTIMODAL FISION, ASR, ETTS, ETC. -->
     <include file="$(find maggie_bringup)/launch/maggie_interaction.launch" />
 
     <!-- NAVIGATION USING MAP -->

@@ -4,20 +4,20 @@
     <arg name="robot" value="maggie" />
     <arg name="map_name" default="map_1.3.C12_2014-12" />
 
-    <!-- Run the map server -->
+    <!-- MAP SERVER -->
     <node name="map_server" pkg="map_server" type="map_server" args="$(find uc3m_maps)/maps/$(arg map_name).yaml">
         <param name="frame_id" value="/map" />
     </node>
 
-    <!-- do not use a simulated time but Linux wall time -->
+    <!-- DO NOT USE A SIMULATED TIME BUT LINUX WALL TIME -->
     <param name="/use_sim_time" value="false" />
 
-    <!-- navigation (real) -->
+    <!-- NAVIGATION (REAL) -->
     <include file="$(find maggie_navigation_config)/launch/real/navigation_real.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
 
-    <!-- force initialpose -->
+    <!-- FORCE INITIAL POSE -->
     <include file="$(find maggie_navigation_config)/launch/initialpose.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
