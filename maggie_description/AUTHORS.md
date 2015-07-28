@@ -5,6 +5,7 @@ maggie_description package was designed and developed by the Social Robots Group
 ### Current Team
 
 * [Raúl Pérula-Martínez](https://github.com/raulperula) (developer, maintainer)
+* [Fernando Alonso](https://github.com/Lualobus) (developer)
 * [Álvaro Castro-González](https://github.com/alvarokas) (developer)
 * [Miguel A. Salichs](http://roboticslab.uc3m.es/roboticslab/people/miguel-salichs) (director)
 
