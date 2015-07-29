@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="wheel" params="prefix reflect">
+        <link name="${prefix}_wheel_link">
+            <visual>
+                <origin xyz="0 0 0" rpy="0 0 1.57075" />
+
+                <geometry>
+                    <mesh filename="package://maggie_description/meshes/base/wheel.dae" />
+                </geometry>
+            </visual>
+
+            <collision>
+                <origin xyz="0 0 0" rpy="0 0 1.57075" />
+
+                <geometry>
+                    <mesh filename="package://maggie_description/meshes/base/wheel.dae" />
+                </geometry>
+            </collision>
+
+            <xacro:default_inertial mass="1" />
+        </link>
+
+        <joint name="base_to_${prefix}_wheel_joint" type="continuous">
+            <parent link="base_link" />
+            <child link="${prefix}_wheel_link" />
+
+            <origin xyz="${reflect*0.1} 0 -0.2" rpy="0 0 0" />
+            <axis xyz="1 0 0" rpy="0 0 0" />
+        </joint>
+    </xacro:macro>
+</robot>

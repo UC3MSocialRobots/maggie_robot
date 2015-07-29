@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+
+<robot name="maggie" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- MATERIALS -->
+
+    <xacro:include filename="$(find maggie_description)/urdf/materials.urdf.xacro" />
+
+    <!-- CONSTANTS & COMMON MACROS -->
+
+    <xacro:include filename="$(find maggie_description)/urdf/common.xacro" />
+
+    <!-- BODY -->
+
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.5" radius="0.2" />
+            </geometry>
+
+            <material name="white" />
+        </visual>
+
+        <collision>
+            <geometry>
+                <cylinder length="0.5" radius="0.2" />
+            </geometry>
+        </collision>
+
+        <xacro:default_inertial mass="20" />
+    </link>
+
+    <link name="upper_base_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.5" radius="0.2" />
+            </geometry>
+
+            <material name="blue" />
+        </visual>
+
+        <collision>
+            <geometry>
+                <cylinder length="0.5" radius="0.2" />
+            </geometry>
+        </collision>
+
+        <xacro:default_inertial mass="20" />
+    </link>
+
+    <joint name="base_to_upper_base_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="upper_base_link" />
+
+        <origin xyz="0 0 0.5" />
+    </joint>
+
+    <!-- HEAD -->
+
+    <link name="link_virtual" />
+
+    <joint name="base_to_pan_head_joint" type="revolute">
+        <parent link="upper_base_link" />
+        <child link="link_virtual" />
+
+        <origin xyz="0 0 0.45" />
+        <axis xyz="0 0 1" />
+        <limit effort="1000.0" lower="-1.57075" upper="1.57075" velocity="0.5" />
+    </joint>
+
+    <link name="head_link">
+        <visual>
+            <geometry>
+                <sphere radius="0.2" />
+            </geometry>
+
+            <material name="white" />
+        </visual>
+
+        <collision>
+            <geometry>
+                <sphere radius="0.2" />
+            </geometry>
+        </collision>
+
+        <xacro:default_inertial mass="5" />
+    </link>
+
+    <joint name="base_to_tilt_head_joint" type="revolute">
+        <parent link="link_virtual" />
+        <child link="head_link" />
+
+        <origin xyz="0 0 0" />
+        <axis xyz="1 0 0" />
+        <limit effort="1000.0" lower="-0.26" upper="0.26" velocity="0.5" />
+    </joint>
+
+    <!-- MOUTH -->
+
+    <link name="mouth_link">
+        <visual>
+            <geometry>
+                <box size="0.1 0.02 0.02" />
+            </geometry>
+
+            <material name="black" />
+        </visual>
+
+        <collision>
+            <geometry>
+                <box size="0.1 0.02 0.02" />
+            </geometry>
+        </collision>
+
+        <xacro:default_inertial mass="0.02" />
+    </link>
+
+    <joint name="head_to_mouth_joint" type="fixed">
+        <parent link="head_link" />
+        <child link="mouth_link" />
+
+        <origin xyz="0 0.17 -0.1" />
+    </joint>
+
+    <!-- EYES -->
+
+    <xacro:include filename="$(find maggie_description)/urdf/eyes.urdf.xacro" />
+
+    <xacro:eye prefix="left" reflect="-1" />
+    <xacro:eye prefix="right" reflect="1" />
+
+    <!-- ARMS -->
+
+    <xacro:include filename="$(find maggie_description)/urdf/arms.urdf.xacro" />
+
+    <xacro:arm prefix="left" reflect="-1" />
+    <xacro:arm prefix="right" reflect="1" />
+
+    <!-- SCREEN -->
+
+    <link name="screen_link">
+        <visual>
+            <geometry>
+                <box size="0.2 0.02 0.25" />
+            </geometry>
+
+            <material name="black" />
+        </visual>
+
+        <collision>
+            <geometry>
+                <box size="0.2 0.02 0.25" />
+            </geometry>
+        </collision>
+
+        <xacro:default_inertial mass="2" />
+    </link>
+
+    <joint name="base_to_screen_joint" type="fixed">
+        <parent link="upper_base_link" />
+        <child link="screen_link" />
+
+        <origin xyz="0 0.19 0" />
+    </joint>
+
+    <!-- WHEELS -->
+
+    <xacro:include filename="$(find maggie_description)/urdf/wheels.urdf.xacro" />
+
+    <xacro:wheel prefix="left" reflect="-1" />
+    <xacro:wheel prefix="right" reflect="1" />
+
+    <!-- SENSORS -->
+
+    <link name="kinect_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.57075" />
+
+            <geometry>
+                <mesh filename="package://maggie_description/meshes/kinect/kinect.dae" scale="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 1.57075" />
+
+            <geometry>
+                <mesh filename="package://maggie_description/meshes/kinect/kinect.dae" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+
+        <xacro:default_inertial mass="2" />
+    </link>
+
+    <joint name="base_to_kinect_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="kinect_link" />
+
+        <origin xyz="0 0.25 0.25" rpy="0 0 0" />
+    </joint>
+</robot>

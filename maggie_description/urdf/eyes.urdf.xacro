@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="eye" params="prefix reflect">
+        <link name="${prefix}_eye_link">
+            <visual>
+                <geometry>
+                    <sphere radius="0.05" />
+                </geometry>
+
+                <material name="black" />
+            </visual>
+
+            <collision>
+                <geometry>
+                    <sphere radius="0.05" />
+                </geometry>
+            </collision>
+
+            <xacro:default_inertial mass="0.01" />
+        </link>
+
+        <joint name="head_to_${prefix}_eye_joint" type="fixed">
+            <parent link="head_link" />
+            <child link="${prefix}_eye_link" />
+
+            <origin xyz="${reflect*0.06} 0.16 0.05" />
+        </joint>
+    </xacro:macro>
+</robot>

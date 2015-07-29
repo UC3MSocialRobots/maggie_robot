@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="arm" params="prefix reflect">
+        <link name="${prefix}_arm_link">
+            <visual>
+                <origin xyz="0 0 -0.2" rpy="0 1.57075 0" />
+
+                <geometry>
+                    <box size="0.4 0.2 0.1" />
+                </geometry>
+
+                <material name="white" />
+            </visual>
+
+            <collision>
+                <origin xyz="0 0 -0.2" rpy="0 1.57075 0" />
+
+                <geometry>
+                    <box size="0.4 0.2 0.1" />
+                </geometry>
+            </collision>
+
+            <xacro:default_inertial mass="1" />
+        </link>
+
+        <joint name="base_to_${prefix}_arm_joint" type="revolute">
+            <parent link="upper_base_link" />
+            <child link="${prefix}_arm_link" />
+
+            <origin xyz="${reflect*0.25} 0 0.25" />
+            <axis xyz="1 0 0" />
+            <limit effort="1000.0" lower="-1.05" upper="2.69" velocity="0.5" />
+        </joint>
+    </xacro:macro>
+</robot>
