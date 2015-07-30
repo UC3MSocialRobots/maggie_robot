@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="touch_hand" params="prefix reflect">
+        <link name="touch_${prefix}_hand_link">
+            <xacro:default_inertial mass="0.01" />
+        </link>
+
+        <joint name="arm_to_touch_${prefix}_hand_joint" type="fixed">
+            <parent link="${prefix}_arm_link" />
+            <child link="touch_${prefix}_hand_link" />
+
+            <origin xyz="${reflect*-0.05} 0 -${armlen}" rpy="0 0 0" />
+        </joint>
+    </xacro:macro>
+</robot>

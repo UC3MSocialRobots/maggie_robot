@@ -4,7 +4,7 @@
     <xacro:macro name="wheel" params="prefix reflect">
         <link name="${prefix}_wheel_link">
             <visual>
-                <origin xyz="0 0 0" rpy="0 0 1.57075" />
+                <origin xyz="0 0 0" rpy="0 0 ${pi/2}" />
 
                 <geometry>
                     <mesh filename="package://maggie_description/meshes/base/wheel.dae" />
@@ -12,7 +12,7 @@
             </visual>
 
             <collision>
-                <origin xyz="0 0 0" rpy="0 0 1.57075" />
+                <origin xyz="0 0 0" rpy="0 0 ${pi/2}" />
 
                 <geometry>
                     <mesh filename="package://maggie_description/meshes/base/wheel.dae" />

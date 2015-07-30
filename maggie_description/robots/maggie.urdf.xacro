@@ -14,7 +14,7 @@
     <link name="base_link">
         <visual>
             <geometry>
-                <cylinder length="0.5" radius="0.2" />
+                <cylinder length="${baselen}" radius="0.2" />
             </geometry>
 
             <material name="white" />
@@ -22,7 +22,7 @@
 
         <collision>
             <geometry>
-                <cylinder length="0.5" radius="0.2" />
+                <cylinder length="${baselen}" radius="0.2" />
             </geometry>
         </collision>
 
@@ -32,7 +32,7 @@
     <link name="upper_base_link">
         <visual>
             <geometry>
-                <cylinder length="0.5" radius="0.2" />
+                <cylinder length="${bodylen}" radius="0.2" />
             </geometry>
 
             <material name="blue" />
@@ -40,7 +40,7 @@
 
         <collision>
             <geometry>
-                <cylinder length="0.5" radius="0.2" />
+                <cylinder length="${bodylen}" radius="0.2" />
             </geometry>
         </collision>
 
@@ -64,7 +64,7 @@
 
         <origin xyz="0 0 0.45" />
         <axis xyz="0 0 1" />
-        <limit effort="1000.0" lower="-1.57075" upper="1.57075" velocity="0.5" />
+        <limit effort="1000.0" lower="-${pi/2}" upper="${pi/2}" velocity="${defaultvel}" />
     </joint>
 
     <link name="head_link">
@@ -91,7 +91,7 @@
 
         <origin xyz="0 0 0" />
         <axis xyz="1 0 0" />
-        <limit effort="1000.0" lower="-0.26" upper="0.26" velocity="0.5" />
+        <limit effort="1000.0" lower="-0.26" upper="0.26" velocity="${defaultvel}" />
     </joint>
 
     <!-- MOUTH -->
@@ -169,11 +169,89 @@
     <xacro:wheel prefix="left" reflect="-1" />
     <xacro:wheel prefix="right" reflect="1" />
 
-    <!-- SENSORS -->
+    <!-- RFID -->
+
+    <link name="rfid_link">
+        <xacro:default_inertial mass="0.02" />
+    </link>
+
+    <joint name="head_to_rfid_joint" type="fixed">
+        <parent link="head_link" />
+        <child link="rfid_link" />
+
+        <origin xyz="0 0.2 0" rpy="0 0 0" />
+    </joint>
+
+    <!-- IR CONTROLLER -->
+
+    <link name="ir_link">
+        <xacro:default_inertial mass="0.02" />
+    </link>
+
+    <joint name="base_to_ir_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="ir_link" />
+
+        <origin xyz="0 0.2 0.3" rpy="0 0 0" />
+    </joint>
+
+    <!-- LASERS -->
+
+    <link name="sick_link">
+        <xacro:default_inertial mass="5" />
+    </link>
+
+    <joint name="base_to_sick_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="sick_link" />
+
+        <origin xyz="0 0.2 0" rpy="0 0 0" />
+    </joint>
+
+    <link name="hokuyo_link">
+        <xacro:default_inertial mass="1" />
+    </link>
+
+    <joint name="base_to_hokuyo_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="hokuyo_link" />
+
+        <origin xyz="0 -0.2 0.2" rpy="0 0 0" />
+    </joint>
+
+    <!-- TOUCH SENSORS -->
+
+    <link name="touch_head_link">
+        <xacro:default_inertial mass="0.01" />
+    </link>
+
+    <joint name="head_to_touch_head_joint" type="fixed">
+        <parent link="head_link" />
+        <child link="touch_head_link" />
+
+        <origin xyz="0 0 0.2" rpy="0 0 0" />
+    </joint>
+
+    <xacro:include filename="$(find maggie_description)/urdf/touch_back.urdf.xacro" />
+
+    <xacro:touch_back prefix="left" reflect="-1" />
+    <xacro:touch_back prefix="right" reflect="1" />
+
+    <xacro:include filename="$(find maggie_description)/urdf/touch_shoulders.urdf.xacro" />
+
+    <xacro:touch_shoulder prefix="left" reflect="-1" />
+    <xacro:touch_shoulder prefix="right" reflect="1" />
+
+    <xacro:include filename="$(find maggie_description)/urdf/touch_hands.urdf.xacro" />
+
+    <xacro:touch_hand prefix="left" reflect="-1" />
+    <xacro:touch_hand prefix="right" reflect="1" />
+
+    <!-- CAMERAS -->
 
     <link name="kinect_link">
         <visual>
-            <origin xyz="0 0 0" rpy="0 0 1.57075" />
+            <origin xyz="0 0 0" rpy="0 0 ${pi/2}" />
 
             <geometry>
                 <mesh filename="package://maggie_description/meshes/kinect/kinect.dae" scale="0.001 0.001 0.001" />
@@ -181,7 +259,7 @@
         </visual>
 
         <collision>
-            <origin xyz="0 0 0" rpy="0 0 1.57075" />
+            <origin xyz="0 0 0" rpy="0 0 ${pi/2}" />
 
             <geometry>
                 <mesh filename="package://maggie_description/meshes/kinect/kinect.dae" scale="0.001 0.001 0.001" />
@@ -196,5 +274,16 @@
         <child link="kinect_link" />
 
         <origin xyz="0 0.25 0.25" rpy="0 0 0" />
+    </joint>
+
+    <link name="webcam_link">
+        <xacro:default_inertial mass="0.03" />
+    </link>
+
+    <joint name="mouth_to_webcam_joint" type="fixed">
+        <parent link="mouth_link" />
+        <child link="webcam_link" />
+
+        <origin xyz="0 0 0" rpy="0 0 0" />
     </joint>
 </robot>
