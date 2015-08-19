@@ -10,7 +10,7 @@
             <parent link="${prefix}_arm_link" />
             <child link="touch_${prefix}_hand_link" />
 
-            <origin xyz="${reflect*-0.05} 0 -${armlen}" rpy="0 0 0" />
+            <origin xyz="${reflect*-0.05} 0 -${armlen-0.02}" rpy="0 0 0" />
         </joint>
     </xacro:macro>
 </robot>

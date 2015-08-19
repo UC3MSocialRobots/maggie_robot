@@ -1,41 +1,80 @@
 digraph G {
 node [shape=box];
 "base_link" [label="base_link"];
+"hokuyo_link" [label="hokuyo_link"];
+"ir_link" [label="ir_link"];
 "kinect_link" [label="kinect_link"];
 "left_wheel_link" [label="left_wheel_link"];
 "right_wheel_link" [label="right_wheel_link"];
+"sick_link" [label="sick_link"];
 "upper_base_link" [label="upper_base_link"];
+"touch_left_back_link" [label="touch_left_back_link"];
+"touch_left_shoulder_link" [label="touch_left_shoulder_link"];
+"touch_right_back_link" [label="touch_right_back_link"];
+"touch_right_shoulder_link" [label="touch_right_shoulder_link"];
 "left_arm_link" [label="left_arm_link"];
+"touch_left_hand_link" [label="touch_left_hand_link"];
+"neck_link" [label="neck_link"];
 "link_virtual" [label="link_virtual"];
 "head_link" [label="head_link"];
 "left_eye_link" [label="left_eye_link"];
 "mouth_link" [label="mouth_link"];
+"webcam_link" [label="webcam_link"];
+"rfid_link" [label="rfid_link"];
 "right_eye_link" [label="right_eye_link"];
+"touch_head_link" [label="touch_head_link"];
 "right_arm_link" [label="right_arm_link"];
+"touch_right_hand_link" [label="touch_right_hand_link"];
 "screen_link" [label="screen_link"];
 node [shape=ellipse, color=blue, fontcolor=blue];
-"base_link" -> "base_to_kinect_joint" [label="xyz: 0 0.25 0.25 \nrpy: 0 -0 0"]
+"base_link" -> "base_to_hokuyo_joint" [label="xyz: 0 -0.2 0.2 \nrpy: 0 -0 0"]
+"base_to_hokuyo_joint" -> "hokuyo_link"
+"base_link" -> "base_to_ir_joint" [label="xyz: 0 0.2 0.3 \nrpy: 0 -0 0"]
+"base_to_ir_joint" -> "ir_link"
+"base_link" -> "base_to_kinect_joint" [label="xyz: 0 0.26 0.23 \nrpy: 0 -0 0"]
 "base_to_kinect_joint" -> "kinect_link"
-"base_link" -> "base_to_left_wheel_joint" [label="xyz: -0.1 0 -0.2 \nrpy: 0 -0 0"]
+"base_link" -> "base_to_left_wheel_joint" [label="xyz: -0.1 0 -0.18 \nrpy: 0 -0 0"]
 "base_to_left_wheel_joint" -> "left_wheel_link"
-"base_link" -> "base_to_right_wheel_joint" [label="xyz: 0.1 0 -0.2 \nrpy: 0 -0 0"]
+"base_link" -> "base_to_right_wheel_joint" [label="xyz: 0.1 0 -0.18 \nrpy: 0 -0 0"]
 "base_to_right_wheel_joint" -> "right_wheel_link"
-"base_link" -> "base_to_upper_base_joint" [label="xyz: 0 0 0.5 \nrpy: 0 -0 0"]
+"base_link" -> "base_to_sick_joint" [label="xyz: 0 0.2 0 \nrpy: 0 -0 0"]
+"base_to_sick_joint" -> "sick_link"
+"base_link" -> "base_to_upper_base_joint" [label="xyz: 0 0 0.49 \nrpy: 0 -0 0"]
 "base_to_upper_base_joint" -> "upper_base_link"
-"upper_base_link" -> "base_to_left_arm_joint" [label="xyz: -0.25 0 0.25 \nrpy: 0 -0 0"]
+"upper_base_link" -> "arm_to_touch_left_back_joint" [label="xyz: -0.1 -0.18 0.18 \nrpy: 0 -0 0"]
+"arm_to_touch_left_back_joint" -> "touch_left_back_link"
+"upper_base_link" -> "arm_to_touch_left_shoulder_joint" [label="xyz: -0.1 0 0.28 \nrpy: 0 -0 0"]
+"arm_to_touch_left_shoulder_joint" -> "touch_left_shoulder_link"
+"upper_base_link" -> "arm_to_touch_right_back_joint" [label="xyz: 0.1 -0.18 0.18 \nrpy: 0 -0 0"]
+"arm_to_touch_right_back_joint" -> "touch_right_back_link"
+"upper_base_link" -> "arm_to_touch_right_shoulder_joint" [label="xyz: 0.1 0 0.28 \nrpy: 0 -0 0"]
+"arm_to_touch_right_shoulder_joint" -> "touch_right_shoulder_link"
+"upper_base_link" -> "base_to_left_arm_joint" [label="xyz: -0.25 0 0.28 \nrpy: 0 -0 0"]
 "base_to_left_arm_joint" -> "left_arm_link"
-"upper_base_link" -> "base_to_pan_head_joint" [label="xyz: 0 0 0.45 \nrpy: 0 -0 0"]
-"base_to_pan_head_joint" -> "link_virtual"
+"left_arm_link" -> "arm_to_touch_left_hand_joint" [label="xyz: 0.05 0 -0.36 \nrpy: 0 -0 0"]
+"arm_to_touch_left_hand_joint" -> "touch_left_hand_link"
+"upper_base_link" -> "base_to_neck_joint" [label="xyz: 0 0 0.305 \nrpy: 0 -0 0"]
+"base_to_neck_joint" -> "neck_link"
+"neck_link" -> "neck_to_pan_head_joint" [label="xyz: 0 0 0.2 \nrpy: 0 -0 0"]
+"neck_to_pan_head_joint" -> "link_virtual"
 "link_virtual" -> "base_to_tilt_head_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
 "base_to_tilt_head_joint" -> "head_link"
 "head_link" -> "head_to_left_eye_joint" [label="xyz: -0.06 0.16 0.05 \nrpy: 0 -0 0"]
 "head_to_left_eye_joint" -> "left_eye_link"
 "head_link" -> "head_to_mouth_joint" [label="xyz: 0 0.17 -0.1 \nrpy: 0 -0 0"]
 "head_to_mouth_joint" -> "mouth_link"
+"mouth_link" -> "mouth_to_webcam_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"mouth_to_webcam_joint" -> "webcam_link"
+"head_link" -> "head_to_rfid_joint" [label="xyz: 0 0.2 0 \nrpy: 0 -0 0"]
+"head_to_rfid_joint" -> "rfid_link"
 "head_link" -> "head_to_right_eye_joint" [label="xyz: 0.06 0.16 0.05 \nrpy: 0 -0 0"]
 "head_to_right_eye_joint" -> "right_eye_link"
-"upper_base_link" -> "base_to_right_arm_joint" [label="xyz: 0.25 0 0.25 \nrpy: 0 -0 0"]
+"head_link" -> "head_to_touch_head_joint" [label="xyz: 0 0 0.2 \nrpy: 0 -0 0"]
+"head_to_touch_head_joint" -> "touch_head_link"
+"upper_base_link" -> "base_to_right_arm_joint" [label="xyz: 0.25 0 0.28 \nrpy: 0 -0 0"]
 "base_to_right_arm_joint" -> "right_arm_link"
-"upper_base_link" -> "base_to_screen_joint" [label="xyz: 0 0.19 0 \nrpy: 0 -0 0"]
+"right_arm_link" -> "arm_to_touch_right_hand_joint" [label="xyz: -0.05 0 -0.36 \nrpy: 0 -0 0"]
+"arm_to_touch_right_hand_joint" -> "touch_right_hand_link"
+"upper_base_link" -> "base_to_screen_joint" [label="xyz: 0 0.19 0.105 \nrpy: 0 -0 0"]
 "base_to_screen_joint" -> "screen_link"
 }

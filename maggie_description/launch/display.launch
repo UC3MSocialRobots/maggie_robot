@@ -12,7 +12,7 @@
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
     
     <!-- Publish a static transform between the robot base and the world frame -->
-    <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="0 0 0.28  0 0 0  world base_link 100" />
+    <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster" args="0 0 0.26  0 0 0  world base_link 100" />
 
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find maggie_description)/config/urdf.rviz"
         required="true" />

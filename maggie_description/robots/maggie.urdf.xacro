@@ -51,18 +51,45 @@
         <parent link="base_link" />
         <child link="upper_base_link" />
 
-        <origin xyz="0 0 0.5" />
+        <origin xyz="0 0 ${baselen/2+bodylen/2}" />
+    </joint>
+    
+    <!-- NECK -->
+
+    <link name="neck_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.05" radius="0.04" />
+            </geometry>
+
+            <material name="black" />
+        </visual>
+
+        <collision>
+            <geometry>
+                <cylinder length="0.05" radius="0.02" />
+            </geometry>
+        </collision>
+
+        <xacro:default_inertial mass="0.2" />
+    </link>
+    
+    <joint name="base_to_neck_joint" type="fixed">
+        <parent link="upper_base_link" />
+        <child link="neck_link" />
+
+        <origin xyz="0 0 ${bodylen/2+0.05/2}" />
     </joint>
 
     <!-- HEAD -->
-
+    
     <link name="link_virtual" />
 
-    <joint name="base_to_pan_head_joint" type="revolute">
-        <parent link="upper_base_link" />
+    <joint name="neck_to_pan_head_joint" type="revolute">
+        <parent link="neck_link" />
         <child link="link_virtual" />
 
-        <origin xyz="0 0 0.45" />
+        <origin xyz="0 0 ${headlen/2}" />
         <axis xyz="0 0 1" />
         <limit effort="1000.0" lower="-${pi/2}" upper="${pi/2}" velocity="${defaultvel}" />
     </joint>
@@ -70,7 +97,7 @@
     <link name="head_link">
         <visual>
             <geometry>
-                <sphere radius="0.2" />
+                <sphere radius="${headlen/2}" />
             </geometry>
 
             <material name="white" />
@@ -78,7 +105,7 @@
 
         <collision>
             <geometry>
-                <sphere radius="0.2" />
+                <sphere radius="${headlen/2}" />
             </geometry>
         </collision>
 
@@ -140,7 +167,7 @@
     <link name="screen_link">
         <visual>
             <geometry>
-                <box size="0.2 0.02 0.25" />
+                <box size="0.16 0.02 0.21" />
             </geometry>
 
             <material name="black" />
@@ -148,7 +175,7 @@
 
         <collision>
             <geometry>
-                <box size="0.2 0.02 0.25" />
+                <box size="0.16 0.02 0.21" />
             </geometry>
         </collision>
 
@@ -159,7 +186,7 @@
         <parent link="upper_base_link" />
         <child link="screen_link" />
 
-        <origin xyz="0 0.19 0" />
+        <origin xyz="0 0.19 ${0.21/2}" />
     </joint>
 
     <!-- WHEELS -->
@@ -273,7 +300,7 @@
         <parent link="base_link" />
         <child link="kinect_link" />
 
-        <origin xyz="0 0.25 0.25" rpy="0 0 0" />
+        <origin xyz="0 ${baselen/2+0.05} ${baselen/2+0.02}" rpy="0 0 0" />
     </joint>
 
     <link name="webcam_link">

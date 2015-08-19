@@ -5,9 +5,10 @@
 
     <xacro:property name="pi" value="3.1415" />
 
-    <xacro:property name="bodylen" value="0.5" />
-    <xacro:property name="baselen" value="0.5" />
-    <xacro:property name="armlen" value="0.4" />
+    <xacro:property name="bodylen" value="0.56" />
+    <xacro:property name="baselen" value="0.42" />
+    <xacro:property name="armlen" value="0.38" />
+    <xacro:property name="headlen" value="0.4" />
     
     <xacro:property name="defaultvel" value="0.5" />
 
