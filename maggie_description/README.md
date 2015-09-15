@@ -5,21 +5,25 @@ ROS package with the URDF model for the Social Robot Maggie.
 **How to generate the TF tree GraphViz/PDF:**
 
 `roscd maggie_description/tree`
+
 `urdf_to_graphiz ../robots/maggie.urdf`
 
 **How to generate the URDF from the xacro:**
 
 `roscd maggie_description`
+
 `rosrun xacro xacro robots/maggie.urdf.xacro > robots/maggie.urdf`
 
 **How to check the URDF:**
 
 `roscd maggie_description`
+
 `check_urdf robots/maggie.urdf`
 
 **How to visualize in RVIZ:**
 
 `roscd maggie_description`
+
 `roslaunch maggie_description display.launch model:=robots/maggie.urdf`
 
 ## LICENSE
