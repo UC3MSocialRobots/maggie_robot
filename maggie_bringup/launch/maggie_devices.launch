@@ -31,8 +31,8 @@
         <arg name="robot" value="$(arg robot)" />
     </include>
     
-    <!-- LASERS + KINECT -->
-    <include file="$(find maggie_bringup)/launch/lasers_kinect.launch">
+    <!-- LASERS + KINECT + LASER FUSION -->
+    <include file="$(find kinect_laser)/launch/kinect_fusion.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
 </launch>

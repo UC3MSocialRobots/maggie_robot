@@ -7,5 +7,5 @@
     <node pkg="tf" type="static_transform_publisher" name="base_link_tf_broadcaster"
           args="0 0 0.75   0 0 0   odom  base_link   100"/>
     <node pkg="tf" type="static_transform_publisher" name="kinect_tf_broadcaster"
-        args="0.14 0 0.47   0 0.045 0   base_link   $(arg robot)_camera_link   100"/>
+		  args="0.19 0 0.44   0 0.062 0   base_link   $(arg robot)_camera_link   100"/>
 </launch>
