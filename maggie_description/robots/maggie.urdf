@@ -15,6 +15,8 @@
     <color rgba="1 1 1 1"/>
   </material>
   <!-- CONSTANTS & COMMON MACROS -->
+  <!-- CONSTANTS -->
+  <!-- MACROS -->
   <!-- BODY -->
   <link name="base_link">
     <visual>
@@ -338,7 +340,7 @@
   <joint name="base_to_sick_joint" type="fixed">
     <parent link="base_link"/>
     <child link="sick_link"/>
-    <origin rpy="0 0 0" xyz="0 0.2 0"/>
+    <origin rpy="1.57075 0 0" xyz="0 0.2 0"/>
   </joint>
   <link name="hokuyo_link">
     <inertial>
