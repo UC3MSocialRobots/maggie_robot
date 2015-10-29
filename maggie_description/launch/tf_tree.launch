@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+    <arg name="model" />
+
+    <!-- urdf xml robot description loaded on the Parameter Server -->
+    <param name="robot_description" textfile="$(arg model)" />
+
+    <!-- source that publishes the joint positions as a sensor_msgs/JointState -->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+    <!-- publish the state of a robot to tf -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+    <!-- publish a static transform between the robot base and the world frame -->
+    <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster"
+        args="0 0 0.26  0 0 0  world base_link 100" />
+</launch>
