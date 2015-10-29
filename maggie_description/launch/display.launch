@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <launch>
-    <arg name="model" />
+    <arg name="model" default="$(find maggie_description)/robots/maggie.urdf" />
     <arg name="gui" default="False" />
 
     <include file="$(find maggie_description)/launch/tf_tree.launch">
-        <arg name="model" value="$(arg model" />
+        <arg name="model" value="$(arg model)" />
     </include>
 
     <!-- robot visualization -->

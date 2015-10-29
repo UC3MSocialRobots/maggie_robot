@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <launch>
-    <arg name="model" />
+    <arg name="model" default="$(find maggie_description)/robots/maggie.urdf" />
 
     <!-- urdf xml robot description loaded on the Parameter Server -->
     <param name="robot_description" textfile="$(arg model)" />
