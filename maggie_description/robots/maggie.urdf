@@ -351,7 +351,7 @@
   <joint name="base_to_hokuyo_joint" type="fixed">
     <parent link="base_link"/>
     <child link="hokuyo_link"/>
-    <origin rpy="0 0 0" xyz="0 -0.2 0.2"/>
+    <origin rpy="0 0 -1.57075" xyz="0 -0.2 0.2"/>
   </joint>
   <!-- TOUCH SENSORS -->
   <link name="touch_head_link">
