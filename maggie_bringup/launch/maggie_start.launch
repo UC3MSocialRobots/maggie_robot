@@ -4,10 +4,10 @@
     <arg name="robot" value="maggie" />
 
     <!-- TF CONFIG -->
-    <include file="$(find maggie_bringup)/launch/maggie_config.launch" />
-    
+    <include file="$(find maggie_description)/launch/tf_tree.launch" />
+
     <!-- DEVICES - -->
-    <include file="$(find maggie_bringup)/launch/maggie_devices.launch" />    
+    <include file="$(find maggie_bringup)/launch/maggie_devices.launch" />
 
     <!-- SKILLS - -->
     <include file="$(find maggie_bringup)/launch/maggie_skills.launch" />

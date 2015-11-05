@@ -17,4 +17,7 @@
     <!-- <include file="$(find kinect)/launch/kinect_node_local.launch">
         <arg name="robot" value="$(arg robot)" />
     </include> -->
+    <include file="$(find openni_launch)/launch/openni.launch">
+        <arg name="camera" value="$(arg robot)_camera" />
+    </include>
 </launch>

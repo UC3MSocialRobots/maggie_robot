@@ -30,9 +30,14 @@
     <include file="$(find maggie_rfid)/launch/rfid_head.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
-    
-    <!-- LASERS + KINECT + LASER FUSION -->
-    <include file="$(find kinect_laser)/launch/kinect_fusion.launch">
+
+    <!-- LASERS + KINECT -->
+    <include file="$(find kinect_laser)/launch/lasers_kinect.launch">
+        <arg name="robot" value="$(arg robot)" />
+    </include>
+
+    <!-- LASERS-KINECT FUSION -->
+    <include file="$(find kinect_laser)/launch/lasers_kinect_fusion.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
 </launch>

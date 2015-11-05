@@ -2,14 +2,19 @@
 
 <launch>
     <arg name="robot" value="maggie" />
-    
+
     <!-- START BASIC -->
-    <include file="$(find maggie_bringup)/launch/maggie_start_basic.launch" />    
+    <include file="$(find maggie_bringup)/launch/maggie_start_basic.launch" />
 
     <!-- DEVICES - -->
 
     <!-- LASERS + KINECT -->
-    <include file="$(find maggie_bringup)/launch/lasers_kinect.launch">
+    <include file="$(find kinect_laser)/launch/lasers_kinect.launch">
+        <arg name="robot" value="$(arg robot)" />
+    </include>
+
+    <!-- LASERS-KINECT FUSION -->
+    <include file="$(find kinect_laser)/launch/lasers_kinect_fusion.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
 
