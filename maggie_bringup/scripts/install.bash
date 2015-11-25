@@ -21,21 +21,18 @@ sudo service udev restart
 sudo udevadm control --reload-rules
 sudo udevadm trigger
 
-
-echo "FINISH!"
-
+# config alsa audio device
 
 echo "Replacing alsa and pulse config files to set the Logitech USB card as default audio device"
+
 sudo cp ../config/default.pa /etc/pulse/default.pa
 sudo cp ../config/alsa-base.conf /etc/modprobe.d/alsa-base.conf
 
+# config loquendo license
+
 echo "Replacing MAC addres to works the Loquendo licence"
+
 sudo apt-get install macchanger 
 sudo cp ../config/interfaces /etc/network/interfaces
 
-## (optional) Config IR permissions
-
-file=`rospack find maggie_ir_drivers`/scripts/config_driver.sh
-if [ -e "$file" ]; then
-    sh $file
-fi 
+echo "FINISH!"
