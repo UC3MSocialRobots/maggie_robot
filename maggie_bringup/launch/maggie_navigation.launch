@@ -18,7 +18,7 @@
     </include>
 
     <!-- FORCE INITIAL POSE -->
-    <include file="$(find maggie_navigation_config)/launch/initialpose.launch">
+    <include file="$(find maggie_navigation_config)/launch/$(arg map_name)_initialpose.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
 </launch>
