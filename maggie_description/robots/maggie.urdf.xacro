@@ -13,6 +13,8 @@
 
     <link name="base_link">
         <visual>
+            <origin xyz="0 0 ${baselen/2+0.05}" />
+            
             <geometry>
                 <cylinder length="${baselen}" radius="0.2" />
             </geometry>
@@ -51,7 +53,7 @@
         <parent link="base_link" />
         <child link="upper_base_link" />
 
-        <origin xyz="0 0 ${baselen/2+bodylen/2}" />
+        <origin xyz="0 0 ${(baselen+0.05)+bodylen/2}" />
     </joint>
     
     <!-- NECK -->
@@ -219,7 +221,7 @@
         <parent link="base_link" />
         <child link="ir_link" />
 
-        <origin xyz="0 0.2 0.3" rpy="0 0 0" />
+        <origin xyz="0 0.2 ${baselen/2+0.05+0.3}" rpy="0 0 0" />
     </joint>
 
     <!-- LASERS -->
@@ -232,7 +234,7 @@
         <parent link="base_link" />
         <child link="sick_link" />
 
-        <origin xyz="0 0.2 0" rpy="0 0 ${pi/2}" />
+        <origin xyz="0 0.2 ${baselen/2+0.05}" rpy="0 0 ${pi/2}" />
     </joint>
 
     <link name="hokuyo_link">
@@ -243,7 +245,7 @@
         <parent link="base_link" />
         <child link="hokuyo_link" />
 
-        <origin xyz="0 -0.2 0.2" rpy="0 0 -${pi/2}" />
+        <origin xyz="0 -0.2 ${baselen/2+0.05+0.2}" rpy="0 0 -${pi/2}" />
     </joint>
 
     <!-- TOUCH SENSORS -->
@@ -300,7 +302,7 @@
         <parent link="base_link" />
         <child link="kinect_link" />
 
-        <origin xyz="0 ${baselen/2+0.05} ${baselen/2+0.02}" rpy="0 0 0" />
+        <origin xyz="0 ${baselen/2+0.05} ${baselen+0.05+0.02}" rpy="0 0 0" />
     </joint>
 
     <link name="webcam_link">

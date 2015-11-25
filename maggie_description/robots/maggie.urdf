@@ -20,6 +20,7 @@
   <!-- BODY -->
   <link name="base_link">
     <visual>
+      <origin xyz="0 0 0.26"/>
       <geometry>
         <cylinder length="0.42" radius="0.2"/>
       </geometry>
@@ -55,7 +56,7 @@
   <joint name="base_to_upper_base_joint" type="fixed">
     <parent link="base_link"/>
     <child link="upper_base_link"/>
-    <origin xyz="0 0 0.49"/>
+    <origin xyz="0 0 0.75"/>
   </joint>
   <!-- NECK -->
   <link name="neck_link">
@@ -279,7 +280,7 @@
   <joint name="base_to_left_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="left_wheel_link"/>
-    <origin rpy="0 0 0" xyz="-0.1 0 -0.18"/>
+    <origin rpy="0 0 0" xyz="-0.1 0 0.08"/>
     <axis rpy="0 0 0" xyz="1 0 0"/>
   </joint>
   <link name="right_wheel_link">
@@ -303,7 +304,7 @@
   <joint name="base_to_right_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="right_wheel_link"/>
-    <origin rpy="0 0 0" xyz="0.1 0 -0.18"/>
+    <origin rpy="0 0 0" xyz="0.1 0 0.08"/>
     <axis rpy="0 0 0" xyz="1 0 0"/>
   </joint>
   <!-- RFID -->
@@ -328,7 +329,7 @@
   <joint name="base_to_ir_joint" type="fixed">
     <parent link="base_link"/>
     <child link="ir_link"/>
-    <origin rpy="0 0 0" xyz="0 0.2 0.3"/>
+    <origin rpy="0 0 0" xyz="0 0.2 0.56"/>
   </joint>
   <!-- LASERS -->
   <link name="sick_link">
@@ -340,7 +341,7 @@
   <joint name="base_to_sick_joint" type="fixed">
     <parent link="base_link"/>
     <child link="sick_link"/>
-    <origin rpy="0 0 1.57075" xyz="0 0.2 0"/>
+    <origin rpy="0 0 1.57075" xyz="0 0.2 0.26"/>
   </joint>
   <link name="hokuyo_link">
     <inertial>
@@ -351,7 +352,7 @@
   <joint name="base_to_hokuyo_joint" type="fixed">
     <parent link="base_link"/>
     <child link="hokuyo_link"/>
-    <origin rpy="0 0 -1.57075" xyz="0 -0.2 0.2"/>
+    <origin rpy="0 0 -1.57075" xyz="0 -0.2 0.46"/>
   </joint>
   <!-- TOUCH SENSORS -->
   <link name="touch_head_link">
@@ -453,7 +454,7 @@
   <joint name="base_to_kinect_joint" type="fixed">
     <parent link="base_link"/>
     <child link="kinect_link"/>
-    <origin rpy="0 0 0" xyz="0 0.26 0.23"/>
+    <origin rpy="0 0 0" xyz="0 0.26 0.49"/>
   </joint>
   <link name="webcam_link">
     <inertial>

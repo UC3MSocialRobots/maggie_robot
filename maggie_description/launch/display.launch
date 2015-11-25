@@ -7,6 +7,9 @@
     <include file="$(find maggie_description)/launch/tf_tree.launch">
         <arg name="model" value="$(arg model)" />
     </include>
+    
+    <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster"
+        args="0 0 0  0 0 0  world base_link 100" />
 
     <!-- robot visualization -->
     <param name="use_gui" value="$(arg gui)" />
