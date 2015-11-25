@@ -22,5 +22,7 @@
     </include>
 
     <!-- NAVIGATION USING MAP -->
-    <include file="$(find maggie_bringup)/launch/maggie_navigation.launch" />
+    <include file="$(find maggie_bringup)/launch/maggie_navigation.launch">
+        <arg name="map_name" default="map_1.3.C12_2014-12" />
+    </include>
 </launch>
