@@ -27,19 +27,19 @@ node [shape=box];
 "touch_right_hand_link" [label="touch_right_hand_link"];
 "screen_link" [label="screen_link"];
 node [shape=ellipse, color=blue, fontcolor=blue];
-"base_link" -> "base_to_hokuyo_joint" [label="xyz: 0 -0.2 0.2 \nrpy: 0 -0 0"]
+"base_link" -> "base_to_hokuyo_joint" [label="xyz: 0 -0.2 0.46 \nrpy: 0 0 -1.57075"]
 "base_to_hokuyo_joint" -> "hokuyo_link"
-"base_link" -> "base_to_ir_joint" [label="xyz: 0 0.2 0.3 \nrpy: 0 -0 0"]
+"base_link" -> "base_to_ir_joint" [label="xyz: 0 0.2 0.56 \nrpy: 0 -0 0"]
 "base_to_ir_joint" -> "ir_link"
-"base_link" -> "base_to_kinect_joint" [label="xyz: 0 0.26 0.23 \nrpy: 0 -0 0"]
+"base_link" -> "base_to_kinect_joint" [label="xyz: 0 0.26 0.49 \nrpy: 0 -0 0"]
 "base_to_kinect_joint" -> "kinect_link"
-"base_link" -> "base_to_left_wheel_joint" [label="xyz: -0.1 0 -0.18 \nrpy: 0 -0 0"]
+"base_link" -> "base_to_left_wheel_joint" [label="xyz: -0.1 0 0.08 \nrpy: 0 -0 0"]
 "base_to_left_wheel_joint" -> "left_wheel_link"
-"base_link" -> "base_to_right_wheel_joint" [label="xyz: 0.1 0 -0.18 \nrpy: 0 -0 0"]
+"base_link" -> "base_to_right_wheel_joint" [label="xyz: 0.1 0 0.08 \nrpy: 0 -0 0"]
 "base_to_right_wheel_joint" -> "right_wheel_link"
-"base_link" -> "base_to_sick_joint" [label="xyz: 0 0.2 0 \nrpy: 0 -0 0"]
+"base_link" -> "base_to_sick_joint" [label="xyz: 0 0.2 0.26 \nrpy: 0 -0 1.57075"]
 "base_to_sick_joint" -> "sick_link"
-"base_link" -> "base_to_upper_base_joint" [label="xyz: 0 0 0.49 \nrpy: 0 -0 0"]
+"base_link" -> "base_to_upper_base_joint" [label="xyz: 0 0 0.75 \nrpy: 0 -0 0"]
 "base_to_upper_base_joint" -> "upper_base_link"
 "upper_base_link" -> "arm_to_touch_left_back_joint" [label="xyz: -0.1 -0.18 0.18 \nrpy: 0 -0 0"]
 "arm_to_touch_left_back_joint" -> "touch_left_back_link"
