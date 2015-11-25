@@ -11,8 +11,4 @@
 
     <!-- publish the state of a robot to tf -->
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
-
-    <!-- publish a static transform between the robot base and the world frame -->
-<!--     <node pkg="tf" type="static_transform_publisher" name="world_base_broadcaster"
-        args="0 0 0.26  0 0 0  world base_link 100" /> -->
 </launch>
