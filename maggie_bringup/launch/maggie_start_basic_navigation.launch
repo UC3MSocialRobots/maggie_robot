@@ -23,6 +23,7 @@
     <!-- GOTO PLACE -->
     <include file="$(find goto_place_skill)/launch/goto_place_skill.launch">
         <arg name="robot" value="$(arg robot)" />
+        <arg name="map_name" value="map_1.3.C12" />
     </include>
 
     <!-- NAVIGATION USING MAP -->
