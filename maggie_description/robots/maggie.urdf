@@ -20,7 +20,7 @@
   <!-- BODY -->
   <link name="base_link">
     <visual>
-      <origin xyz="0 0 0.26"/>
+      <origin rpy="0 0 1.57075" xyz="0 0 0.26"/>
       <geometry>
         <cylinder length="0.42" radius="0.2"/>
       </geometry>
