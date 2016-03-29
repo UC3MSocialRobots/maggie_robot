@@ -4,7 +4,7 @@
 
 # add 'user' to the groups 'dialout', and 'video'
 
-sudo usermod -a -G dialout, video $USER
+sudo usermod -a -G dialout,video $USER
 
 # copy udev rules
 
