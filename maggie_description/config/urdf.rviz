@@ -96,10 +96,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        link_virtual:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
         mouth_link:
           Alpha: 1
           Show Axes: false
@@ -171,6 +167,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         webcam_link:
           Alpha: 1
           Show Axes: false
@@ -202,8 +202,6 @@ Visualization Manager:
           Value: true
         left_wheel_link:
           Value: true
-        link_virtual:
-          Value: true
         mouth_link:
           Value: true
         neck_link:
@@ -236,6 +234,8 @@ Visualization Manager:
           Value: true
         upper_base_link:
           Value: true
+        virtual_link:
+          Value: true
         webcam_link:
           Value: true
         world:
@@ -265,7 +265,7 @@ Visualization Manager:
                 touch_left_hand_link:
                   {}
               neck_link:
-                link_virtual:
+                virtual_link:
                   head_link:
                     left_eye_link:
                       {}
@@ -324,7 +324,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.47038
+      Distance: 3.09884
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
@@ -336,10 +336,10 @@ Visualization Manager:
         Z: 0.740137
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.265397
+      Pitch: 0.155397
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.69541
+      Yaw: 0.00541008
     Saved: ~
 Window Geometry:
   Displays:
