@@ -117,6 +117,7 @@
   <!-- MOUTH -->
   <link name="mouth_link">
     <visual>
+      <origin rpy="0 0 1.57075" xyz="0 0 0"/>
       <geometry>
         <box size="0.1 0.02 0.02"/>
       </geometry>
@@ -135,7 +136,7 @@
   <joint name="head_to_mouth_joint" type="fixed">
     <parent link="head_link"/>
     <child link="mouth_link"/>
-    <origin xyz="0 0.17 -0.1"/>
+    <origin xyz="0.17 0 -0.1"/>
   </joint>
   <!-- EYES -->
   <link name="left_eye_link">
