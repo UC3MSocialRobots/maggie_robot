@@ -82,10 +82,10 @@
     <origin xyz="0 0 0.305"/>
   </joint>
   <!-- HEAD -->
-  <link name="link_virtual"/>
+  <link name="virtual_link"/>
   <joint name="neck_to_pan_head_joint" type="revolute">
     <parent link="neck_link"/>
-    <child link="link_virtual"/>
+    <child link="virtual_link"/>
     <origin xyz="0 0 0.2"/>
     <axis xyz="0 0 1"/>
     <limit effort="1000.0" lower="-1.57075" upper="1.57075" velocity="0.5"/>
@@ -108,7 +108,7 @@
     </inertial>
   </link>
   <joint name="base_to_tilt_head_joint" type="revolute">
-    <parent link="link_virtual"/>
+    <parent link="virtual_link"/>
     <child link="head_link"/>
     <origin xyz="0 0 0"/>
     <axis xyz="1 0 0"/>
@@ -261,13 +261,13 @@
   <!-- WHEELS -->
   <link name="left_wheel_link">
     <visual>
-      <origin rpy="0 0 1.57075" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://maggie_description/meshes/base/wheel.dae"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 1.57075" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://maggie_description/meshes/base/wheel.dae"/>
       </geometry>
@@ -280,18 +280,18 @@
   <joint name="base_to_left_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="left_wheel_link"/>
-    <origin rpy="0 0 0" xyz="-0.1 0 0.08"/>
+    <origin rpy="0 0 0" xyz="0 -0.1 0.08"/>
     <axis rpy="0 0 0" xyz="1 0 0"/>
   </joint>
   <link name="right_wheel_link">
     <visual>
-      <origin rpy="0 0 1.57075" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://maggie_description/meshes/base/wheel.dae"/>
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0 0 1.57075" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://maggie_description/meshes/base/wheel.dae"/>
       </geometry>
@@ -304,7 +304,7 @@
   <joint name="base_to_right_wheel_joint" type="continuous">
     <parent link="base_link"/>
     <child link="right_wheel_link"/>
-    <origin rpy="0 0 0" xyz="0.1 0 0.08"/>
+    <origin rpy="0 0 0" xyz="0 0.1 0.08"/>
     <axis rpy="0 0 0" xyz="1 0 0"/>
   </joint>
   <!-- RFID -->

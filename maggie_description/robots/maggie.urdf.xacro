@@ -85,11 +85,11 @@
 
     <!-- HEAD -->
     
-    <link name="link_virtual" />
+    <link name="virtual_link" />
 
     <joint name="neck_to_pan_head_joint" type="revolute">
         <parent link="neck_link" />
-        <child link="link_virtual" />
+        <child link="virtual_link" />
 
         <origin xyz="0 0 ${headlen/2}" />
         <axis xyz="0 0 1" />
@@ -115,7 +115,7 @@
     </link>
 
     <joint name="base_to_tilt_head_joint" type="revolute">
-        <parent link="link_virtual" />
+        <parent link="virtual_link" />
         <child link="head_link" />
 
         <origin xyz="0 0 0" />
