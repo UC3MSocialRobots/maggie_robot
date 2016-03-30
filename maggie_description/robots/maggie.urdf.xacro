@@ -284,7 +284,7 @@
 
     <link name="kinect_link">
         <visual>
-            <origin xyz="0 0 0" rpy="0 0 ${pi/2}" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
 
             <geometry>
                 <mesh filename="package://maggie_description/meshes/kinect/kinect.dae" scale="0.001 0.001 0.001" />
@@ -292,7 +292,7 @@
         </visual>
 
         <collision>
-            <origin xyz="0 0 0" rpy="0 0 ${pi/2}" />
+            <origin xyz="0 0 0" rpy="0 0 0" />
 
             <geometry>
                 <mesh filename="package://maggie_description/meshes/kinect/kinect.dae" scale="0.001 0.001 0.001" />
@@ -306,7 +306,7 @@
         <parent link="base_link" />
         <child link="kinect_link" />
 
-        <origin xyz="0 ${baselen/2+0.05} ${baselen+0.05+0.02}" rpy="0 0 0" />
+        <origin xyz="${baselen/2+0.05} 0 ${baselen+0.05+0.02}" rpy="0 0 0" />
     </joint>
 
     <link name="webcam_link">
