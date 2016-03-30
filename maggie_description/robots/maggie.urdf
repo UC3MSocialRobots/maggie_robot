@@ -319,7 +319,7 @@
   <joint name="head_to_rfid_joint" type="fixed">
     <parent link="head_link"/>
     <child link="rfid_link"/>
-    <origin rpy="0 0 0" xyz="0 0.2 0"/>
+    <origin rpy="0 0 0" xyz="0.2 0 0"/>
   </joint>
   <!-- IR CONTROLLER -->
   <link name="ir_link">
@@ -331,7 +331,7 @@
   <joint name="base_to_ir_joint" type="fixed">
     <parent link="base_link"/>
     <child link="ir_link"/>
-    <origin rpy="0 0 0" xyz="0 0.2 0.56"/>
+    <origin rpy="0 0 0" xyz="0.2 0 0.56"/>
   </joint>
   <!-- LASERS -->
   <link name="sick_link">

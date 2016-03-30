@@ -212,7 +212,7 @@
         <parent link="head_link" />
         <child link="rfid_link" />
 
-        <origin xyz="0 0.2 0" rpy="0 0 0" />
+        <origin xyz="0.2 0 0" rpy="0 0 0" />
     </joint>
 
     <!-- IR CONTROLLER -->
@@ -225,7 +225,7 @@
         <parent link="base_link" />
         <child link="ir_link" />
 
-        <origin xyz="0 0.2 ${baselen/2+0.05+0.3}" rpy="0 0 0" />
+        <origin xyz="0.2 0 ${baselen/2+0.05+0.3}" rpy="0 0 0" />
     </joint>
 
     <!-- LASERS -->
