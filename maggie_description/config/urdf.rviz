@@ -105,6 +105,11 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        neck_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         rfid_link:
           Alpha: 1
           Show Axes: false
@@ -201,6 +206,8 @@ Visualization Manager:
           Value: true
         mouth_link:
           Value: true
+        neck_link:
+          Value: true
         rfid_link:
           Value: true
         right_arm_link:
@@ -257,19 +264,20 @@ Visualization Manager:
               left_arm_link:
                 touch_left_hand_link:
                   {}
-              link_virtual:
-                head_link:
-                  left_eye_link:
-                    {}
-                  mouth_link:
-                    webcam_link:
+              neck_link:
+                link_virtual:
+                  head_link:
+                    left_eye_link:
                       {}
-                  rfid_link:
-                    {}
-                  right_eye_link:
-                    {}
-                  touch_head_link:
-                    {}
+                    mouth_link:
+                      webcam_link:
+                        {}
+                    rfid_link:
+                      {}
+                    right_eye_link:
+                      {}
+                    touch_head_link:
+                      {}
               right_arm_link:
                 touch_right_hand_link:
                   {}
@@ -284,6 +292,13 @@ Visualization Manager:
               touch_right_shoulder_link:
                 {}
       Update Interval: 0
+      Value: true
+    - Class: rviz/Axes
+      Enabled: true
+      Length: 2
+      Name: Axes
+      Radius: 0.01
+      Reference Frame: <Fixed Frame>
       Value: true
   Enabled: true
   Global Options:
@@ -309,7 +324,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.58025
+      Distance: 2.47038
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
@@ -321,10 +336,10 @@ Visualization Manager:
         Z: 0.740137
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.0903985
+      Pitch: 0.265397
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.6454
+      Yaw: 1.69541
     Saved: ~
 Window Geometry:
   Displays:
