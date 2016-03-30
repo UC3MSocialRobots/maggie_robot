@@ -239,6 +239,7 @@
   <!-- SCREEN -->
   <link name="screen_link">
     <visual>
+      <origin rpy="0 0 1.57075" xyz="0 0 0"/>
       <geometry>
         <box size="0.16 0.02 0.21"/>
       </geometry>
@@ -257,7 +258,7 @@
   <joint name="base_to_screen_joint" type="fixed">
     <parent link="upper_base_link"/>
     <child link="screen_link"/>
-    <origin xyz="0 0.19 0.105"/>
+    <origin xyz="0.19 0 0.105"/>
   </joint>
   <!-- WHEELS -->
   <link name="left_wheel_link">
