@@ -119,7 +119,7 @@
         <child link="head_link" />
 
         <origin xyz="0 0 0" />
-        <axis xyz="1 0 0" />
+        <axis xyz="0 1 0" />
         <limit effort="1000.0" lower="-0.26" upper="0.26" velocity="${defaultvel}" />
     </joint>
 
