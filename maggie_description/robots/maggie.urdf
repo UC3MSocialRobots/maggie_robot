@@ -343,7 +343,7 @@
   <joint name="base_to_sick_joint" type="fixed">
     <parent link="base_link"/>
     <child link="sick_link"/>
-    <origin rpy="0 0 0" xyz="0 0.2 0.26"/>
+    <origin rpy="0 0 0" xyz="0.2 0 0.26"/>
   </joint>
   <link name="hokuyo_link">
     <inertial>
@@ -354,7 +354,7 @@
   <joint name="base_to_hokuyo_joint" type="fixed">
     <parent link="base_link"/>
     <child link="hokuyo_link"/>
-    <origin rpy="0 0 -3.1415" xyz="0 -0.2 0.46"/>
+    <origin rpy="0 0 -3.1415" xyz="-0.2 0 0.46"/>
   </joint>
   <!-- TOUCH SENSORS -->
   <link name="touch_head_link">
