@@ -2,7 +2,10 @@
 
 <launch>
     <arg name="robot" value="maggie" />
-<!--     <arg name="map_name" default="roboticslab_complete_clean" /> -->
+    <!-- map_name values:
+            - roboticslab_complete_clean
+            - map_1.3.C12_2014-12
+     -->
     <arg name="map_name" default="map_1.3.C12_2014-12" />
 
     <!-- MAP SERVER -->
