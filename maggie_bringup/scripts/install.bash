@@ -10,7 +10,6 @@ sudo usermod -a -G dialout,video $USER
 
 echo "Copying udev rules..."
 
-cd `rospack find maggie_bringup`/config/
 sudo cp `rospack find maggie_bringup`/config/99-maggie.rules /etc/udev/rules.d/
 
 # restart and reload udev rules

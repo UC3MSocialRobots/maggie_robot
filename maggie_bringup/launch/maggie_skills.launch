@@ -2,6 +2,11 @@
 
 <launch>
     <arg name="robot" value="maggie" />
+
+    <!-- WAITING -->
+    <include file="$(find waiting_skill)/launch/waiting_skill.launch">
+        <arg name="robot" value="$(arg robot)" />
+    </include>
     
     <!-- ASSOCIATED WITH DEVICES -->
 
