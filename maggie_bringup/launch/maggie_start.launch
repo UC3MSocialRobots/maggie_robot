@@ -16,6 +16,7 @@
 <!--     
     <include file="$(find maggie_bringup)/launch/maggie_interaction.launch" />
  -->
+ 
     <!-- NAVIGATION USING MAP -->
     <include file="$(find maggie_bringup)/launch/maggie_navigation.launch" />
 </launch>
