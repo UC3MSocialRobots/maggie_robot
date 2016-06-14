@@ -3,21 +3,20 @@
 <launch>
     <arg name="robot" value="maggie" />
 
-    <!--
-        <param name="/$(arg robot)/etts_language" value="en" />
-        <param name="/$(arg robot)/etts_emotion" value="happy" />
-        <param name="/$(arg robot)/etts_primitive" value="google" />
-        <include file="$(find asr)/launch/google_asr.launch">
+    <param name="/$(arg robot)/etts_language" value="es" />
+    <param name="/$(arg robot)/etts_emotion" value="happy" />
+    <param name="/$(arg robot)/etts_primitive" value="google" />
+    
+    <!-- <include file="$(find asr)/launch/google_asr.launch">
         <arg name="robot" value="$(arg robot)" />
-        </include>
+    </include> -->
 
-        <include file="$(find etts)/launch/etts_skill.launch">
+    <include file="$(find etts)/launch/etts_skill.launch">
         <arg name="robot" value="$(arg robot)" />
-        </include> -->
-
-    <include file="$(find dialog_manager)/launch/robotics_dialog_system.launch">
-        <arg name="robot" value="$(arg robot)" />
-        <arg name="debug" value="ERROR" />
     </include>
 
+    <!-- <include file="$(find dialog_manager)/launch/robotics_dialog_system.launch">
+        <arg name="robot" value="$(arg robot)" />
+        <arg name="debug" value="ERROR" />
+        </include> -->
 </launch>
