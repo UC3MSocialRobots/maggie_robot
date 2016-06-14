@@ -5,7 +5,7 @@
 
     <param name="/$(arg robot)/etts_language" value="es" />
     <param name="/$(arg robot)/etts_emotion" value="happy" />
-    <param name="/$(arg robot)/etts_primitive" value="google" />
+    <param name="/$(arg robot)/etts_primitive" value="microsoft" />
     
     <!-- <include file="$(find asr)/launch/google_asr.launch">
         <arg name="robot" value="$(arg robot)" />
