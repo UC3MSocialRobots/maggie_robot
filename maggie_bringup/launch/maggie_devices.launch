@@ -31,6 +31,12 @@
         <arg name="robot" value="$(arg robot)" />
     </include>
 
+    <!-- SCREEN -->
+    <include file="$(find touch_screen)/launch/touch_screen.launch">
+        <arg name="robot" value="$(arg robot)" />
+        <arg name="multimedia_path" value="/home/user/multimedia" />
+    </include>
+
     <!-- LASERS + KINECT -->
     <include file="$(find maggie_bringup)/launch/lasers_kinect.launch">
         <arg name="robot" value="$(arg robot)" />
