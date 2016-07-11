@@ -31,10 +31,15 @@
         <arg name="robot" value="$(arg robot)" />
     </include>
 
-    <!-- SCREEN -->
+    <!-- TOUCH SCREEN -->
     <include file="$(find touch_screen)/launch/touch_screen.launch">
         <arg name="robot" value="$(arg robot)" />
         <arg name="multimedia_path" value="/home/user/multimedia" />
+    </include>
+
+    <!-- BEACONS -->
+    <include file="$(find ros_beacons)/launch/ros_beacons.launch">
+        <arg name="robot" value="$(arg robot)" />
     </include>
 
     <!-- LASERS + KINECT -->
