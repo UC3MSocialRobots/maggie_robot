@@ -27,10 +27,10 @@
     
     <!-- ASSOCIATED WITH NAVIGATION -->
     
-    <!-- AUTOCHARGE -->
-    <include file="$(find autocharge_skill)/launch/autocharge_skill.launch">
+    <!-- AUTOCHARGE (commented due to consumption) -->
+<!--     <include file="$(find autocharge_skill)/launch/autocharge_skill.launch">
         <arg name="robot" value="$(arg robot)" />
-    </include>
+    </include> -->
     
     <!-- GOTO PLACE -->
     <include file="$(find goto_place_skill)/launch/goto_place_skill.launch">
