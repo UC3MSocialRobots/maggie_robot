@@ -36,6 +36,11 @@
     <include file="$(find goto_place_skill)/launch/goto_place_skill.launch">
         <arg name="robot" value="$(arg robot)" />
     </include>
+    
+    <!-- PATROLLING -->
+    <include file="$(find patrolling_skill)/launch/patrolling_skill.launch">
+        <arg name="robot" value="$(arg robot)" />
+    </include>
 
     <!-- FOLLOWME -->
 <!--     <include file="$(find followme_skill)/launch/followme_skill.launch">
