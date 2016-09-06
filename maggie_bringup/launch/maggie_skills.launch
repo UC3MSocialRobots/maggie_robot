@@ -2,11 +2,6 @@
 
 <launch>
     <arg name="robot" value="maggie" />
-
-    <!-- WAITING -->
-    <include file="$(find waiting_skill)/launch/waiting_skill.launch">
-        <arg name="robot" value="$(arg robot)" />
-    </include>
     
     <!-- ASSOCIATED WITH DEVICES -->
 
@@ -31,6 +26,11 @@
     </include>
     
     <!-- ASSOCIATED WITH NAVIGATION -->
+    
+    <!-- AUTOCHARGE -->
+    <include file="$(find autocharge_skill)/launch/autocharge_skill.launch">
+        <arg name="robot" value="$(arg robot)" />
+    </include>
     
     <!-- GOTO PLACE -->
     <include file="$(find goto_place_skill)/launch/goto_place_skill.launch">
@@ -65,4 +65,16 @@
 	  <arg name="data_fusion_use_ukf"          value="true"/>
 	  <arg name="data_fusion_static_frame_id"  value="base_link"/>
 	</include> -->
+    
+    <!-- ASSOCIATED WITH DMS -->
+    
+    <!-- SIMPLE HRI -->
+    <include file="$(find simple_hri_skill)/launch/simple_hri_skill.launch">
+        <arg name="robot" value="$(arg robot)" />
+    </include>
+    
+    <!-- WAITING -->
+    <include file="$(find waiting_skill)/launch/waiting_skill.launch">
+        <arg name="robot" value="$(arg robot)" />
+    </include>
 </launch>
